@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#chat{
+    width: 340px;
+    height: 640px;
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+#chat_header{
+    background-color: #B2C7D9;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 10px;
+}
+.left{
+    height: 50px;
+    width: fit-content;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: fit-content;
+}
+
+.gohome{
+    width: 34px;
+    height: 50px;
+    background: #B2C7D9;
+    border: none;
+    font-size: 13px;
+    background-image: url(../../images/right-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+}
+.gohome:hover{
+    cursor: pointer;
+}
+
+#chat_view{
+    padding: 20px;
+    background-color: #B2C7D9;
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+} 
+
+#chat_view::-webkit-scrollbar {
+    display: none;
+}
+
+.chat_p{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: fit-content;
+    border-radius: 30px;
+    margin-top: 7px;
+}
+
+.chat_cp{
+    text-align: center;
+}
+
+.chat_op{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    border-radius: 30px;
+    margin-top: 7px;
+}
+
+.chat_o_p{
+    padding: 7px;
+    width: fit-content;
+    background: white;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+.chat_c_p{
+    padding: 7px;
+    width: fit-content;
+    background: yellow;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+#chat_input{
+    padding: 5px 20px;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+}
+#inputBox{
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    padding: 0 10px;
+}
+
+#inputBox:focus{
+    outline: none;
+}
+
+/* #chat_input > input{
+    background-color: white;
+    width: 400px;
+    height: 100px;
+    border: 0px solid black;
+    padding: 0px;
+    margin: 0px;
+} */
