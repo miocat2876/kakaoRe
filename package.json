@@ -38,11 +38,13 @@
   "dependencies": {
     "@types/history": "^4.7.8",
     "@types/jest": "^26.0.19",
+    "@types/jquery": "^3.5.5",
     "@types/node": "^14.14.16",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
+    "@types/sockjs-client": "^1.5.0",
     "file-loader": "^6.2.0",
     "jquery": "^3.5.1",
     "react": "^17.0.1",

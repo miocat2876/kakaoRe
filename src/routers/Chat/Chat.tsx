@@ -1,15 +1,17 @@
 import React, { useState,useEffect } from 'react';
 import './Chat.css';
-import jQuery from "jquery";
-window.$ = window.jQuery = jQuery;
+import * as $ from "jquery"
 import 'react-stomp';
 import SockJS from 'sockjs-client';
 import { useLocation } from 'react-router-dom';
 
+
+
+
 //웹소켓 설정//
-var stompClient;
+var stompClient:any;
     var sender = localStorage.getItem('id');
-    var chatId;
+    var chatId:any;
 	
 	//연결//
 	function connect(){
@@ -19,7 +21,7 @@ var stompClient;
 		
 		stompClient.connect({}, function(){
 			//메세지를 받는다. 각각의 구독//
-			stompClient.subscribe('/topic/chat/'+ chatId, function(msg){
+			stompClient.subscribe('/topic/chat/'+ chatId, function(msg:any){
 
                 const response = JSON.parse(msg.body);
 
@@ -45,23 +47,23 @@ var stompClient;
 	}
 	
 	//메세지 전송//
-	function sendMessage(text){
+	function sendMessage(text:String){
 		stompClient.send("/app/chat/"+chatId, {}, JSON.stringify({'message':text, 'name':''+sender}));
 	}
 	
     //상대방메세지
-    function output(value){
+    function output(value:any){
         $("#chat_view").prepend('<div class = "chat_op"> <p class = "chat_o_p">'+value.name+': '+value.message+'</p></div>');
     }
 
     //본인메세지
-    function input(value){
+    function input(value:any){
         $("#chat_view").prepend('<div class = "chat_p"> <p class = "chat_c_p">'+value.name+': '+value.message+'</p></div>');
     }
     
 
 
-const Chat = (props) => { 
+const Chat = (props:any) => { 
     const [chatInfo, setChat] = useState(
         {
             name: "",
@@ -70,7 +72,7 @@ const Chat = (props) => {
     );
 
     useEffect(() => {
-        window.onpopstate = function (event) {
+        window.onpopstate = function (event:any) {
             disconnect();
             //라우터 넣기.
             history.push('/chats');
